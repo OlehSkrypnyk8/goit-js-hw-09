@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 360px
+}
+
+.form-email {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 8px;
+    width: 100%;
+}
+
+.form-message {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 8px;
+}
+.input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-btn {
+    align-self: flex-start;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.form-btn:hover {
+    background-color: #0056b3;
+}
+.input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
