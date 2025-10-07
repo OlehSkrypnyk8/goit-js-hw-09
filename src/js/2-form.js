@@ -1,5 +1,5 @@
 
-let formData = {
+const formData = {
     email: '',
     message: ''
 }
@@ -19,11 +19,13 @@ function onTextForm(event) {
 }
 
 function populateForm() {
-    const message = localStorage.getItem(STORAGE_KEY);
-    if (message) {
-        formData = JSON.parse(message);
-        form.elements.email.value = formData.email;
-        form.elements.message.value = formData.message;
+    const saveData = localStorage.getItem(STORAGE_KEY);
+    if (saveData) {
+      const parseData = JSON.parse(saveData);
+      formData.email = parseData.email || '';
+      formData.message = parseData.message || '';
+      form.elements.email.value = formData.email;
+      form.elements.message.value = formData.message;
     }
 }
 
@@ -34,6 +36,9 @@ function handleSubmit(event) {
         alert('Fill please all fields');
         return;
     }
+  console.log(formData);
     event.currentTarget.reset();
     localStorage.removeItem(STORAGE_KEY);
+    formData.email = '';
+    formData.message = '';
 }
